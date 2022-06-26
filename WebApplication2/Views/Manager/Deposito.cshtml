@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication2.Models.DepositoAtivoModel>
+@{ViewData["Title"] = "Deposito";
+    Layout = "_LayoutManager";
+}
+<p>Depositos Registados <are></are> </p>
+<table style="width: 100%" class="Tabela">
+    <thead>
+    <tr>
+        <th>Banco</th>
+        <th>Titulares</th>
+        <th>Valor</th>
+        <th>Taxajuro</th>
+        <th>Nconta</th>
+        <th>Data inicio</th>
+        <th>Duração</th>
+        <th>Taxa Imposto</th>
+        <th>Id cliente</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var de in @Model)
+    {
+        <tr>
+            <td>@de.Banco</td>
+            <td>@de.Titulares</td>
+            <td>@de.Valor</td>
+            <td>@de.Taxajuro</td>
+            <td>@de.Nconta</td>
+            <td>@de.Datainicio</td>
+            <td>@de.Durancao</td>
+            <td>@de.Taxaimposto</td>
+            <td>@de.Idcliente</td>
+
+
+        </tr>
+
+    }
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@model WebApplication2.Models.AtivoFundoModel
+@{
+    ViewData["Title"] = "Criar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Novo</h2>
+<h4>Fundo</h4>
+<hr />
+<div class="row">
+<div class="col-md-4">
+    <form asp-action="createatfun" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            
+            <label asp-for="Datainicio" class="control-label"></label>
+            <input asp-for="Datainicio" class="form-control" />
+            <span asp-validation-for="Datainicio" class="text-danger"></span>
+            
+        </div>
+       
+        <div class="form-group">
+            <label >Duração</label>
+            <input asp-for="Durancao" class="form-control"/>
+            <span asp-validation-for="Durancao" class="text-danger"></span>
+            
+        </div>
+        <div class="form-group">
+            <label asp-for="Taxaimposto" class="control-label"></label>
+            <input asp-for="Taxaimposto" type="taxaimposto" class="form-control"/>
+            <span asp-validation-for="Taxaimposto" class="text-danger"></span>
+        </div>
+       
+    
+    
+
+        
+            
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome</label>
+                <input asp-for="Nome" class="form-control"/>
+                <span asp-validation-for="Nome"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Montante" class="control-label">Montante</label>
+                <input asp-for="Montante" class="form-control"/>
+                <span asp-validation-for="Montante"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Taxajuro" class="control-label">Taxa de Juro</label>
+                <input asp-for="Taxajuro" class="form-control"/>
+                 <span asp-validation-for="Taxajuro"></span>
+            </div>
+            
+            
+            <div class="form-group">
+                <label class="control-label"></label>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Criar Fundo" class="btn btn-primary"/>
+            </div>
+        
+  </form>
+    </div>
+    <div>
+        <a asp-action="Index">Voltar a lista</a>
+    </div>
+
+  
+</div>

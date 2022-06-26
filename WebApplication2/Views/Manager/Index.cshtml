@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication2.Entities.Utilizador>
+@{ViewData["Title"] = "Admin";
+    Layout = "_LayoutManager";
+}
+<p>Utilizadores Registados <are></are> </p>
+
+<form asp-action="Createuser">
+    <input type="submit" value="Criar Utilizador"class="btn btn-primary"/> 
+              
+</form>
+     <p></p>  
+<table style="width: 100%" class="Tabela">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Nif</th>
+        <th>Ncc</th>
+        <th>Rua</th>
+        <th>Nºporta</th>
+        <th>Nome de Utilizador</th>
+        
+        <th>Tipo</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var u in @Model)
+    {
+        <tr>
+            <td>@u.Nome</td>
+            <td>@u.Nif</td>
+            <td>@u.Ncc</td>
+            <td>@u.Rua</td>
+            <td>@u.Nporta</td>
+            <td>@u.Username</td>
+            
+            <td>@u.Tipouser</td>
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@u.Idutilizador">Editar</a>
+
+
+            </td>
+
+        </tr>
+
+    }
+    </tbody>
+</table>

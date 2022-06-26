@@ -1,0 +1,103 @@
+﻿@model WebApplication2.Models.AtivoImovelModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    var errors = ViewData["Errors"] as List<string> ?? new List<string>();
+}
+
+
+<h2>Editar</h2>
+<h4>Imovel</h4>
+<hr />
+<div class="row">
+<div class="col-md-4">
+    <form asp-action="editimo" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <input type="hidden" asp-for="Idimovel" />
+            <input type="hidden" asp-for="Idativo" />
+            <input type="hidden" asp-for="Idcliente" />
+            <label asp-for="Datainicio" class="control-label"></label>
+            <input asp-for="Datainicio" class="form-control" />
+            <span asp-validation-for="Datainicio" class="text-danger"></span>
+            
+        </div>
+       
+        <div class="form-group">
+            <label >Duração</label>
+            <input asp-for="Durancao" class="form-control"/>
+            <span asp-validation-for="Durancao" class="text-danger"></span>
+            
+        </div>
+        <div class="form-group">
+            <label asp-for="Taxaimposto" class="control-label"></label>
+            <input asp-for="Taxaimposto" type="taxaimposto" class="form-control"/>
+            <span asp-validation-for="Taxaimposto" class="text-danger"></span>
+        </div>
+       
+    
+    
+
+        
+            
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome</label>
+                <input asp-for="Nome" class="form-control"/>
+                <span asp-validation-for="Nome"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valorRenda" class="control-label">Valor Renda</label>
+                <input asp-for="valorRenda" class="form-control"/>
+                <span asp-validation-for="valorRenda"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valorCondo" class="control-label">Valor Condominio</label>
+                <input asp-for="valorCondo" class="form-control"/>
+                <span asp-validation-for="valorCondo"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valoresti" class="control-label">Valor Estimado</label>
+                <input asp-for="valoresti" class="form-control"/>
+                 <span asp-validation-for="valoresti"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rua">Rua</label>
+                <input asp-for="rua" class="form-control"/>
+                <span asp-validation-for="rua"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nporta">Nº Porta</label>
+                <input asp-for="nporta" class="form-control"/>
+                 <span asp-validation-for="nporta"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="codpostal">Codigo Postal</label>
+                <input asp-for="codpostal" class="form-control"/>
+                <span asp-validation-for="codpostal"></span>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label"></label>
+            </div>
+
+
+
+        <div class="form-group">
+            <input type="submit" value="Editar Imovel" class="btn btn-primary"/>
+        </div>
+        <div style="color: red;">
+                                @foreach (var error in errors)
+                                {
+                                    <p>@error</p>
+                                }
+                            </div>
+        
+  </form>
+    </div>
+    <div>
+        <a asp-action="Index">Voltar a lista</a>
+    </div>
+
+  
+</div>

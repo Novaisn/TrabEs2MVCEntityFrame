@@ -1,0 +1,47 @@
+﻿@model WebApplication2.Entities.Deposito
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Você tem a certeza que quer eliminar?</h3>
+<div>
+    <h4>Deposito</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Banco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Banco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulares)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulares)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Taxajuro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Taxajuro)
+        </dd>
+        <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nconta)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Nconta)
+                </dd>
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Iddeposito" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">VoltarLista</a>
+    </form>
+</div>

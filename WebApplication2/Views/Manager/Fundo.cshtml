@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication2.Models.AtivoFundoModel>
+@{ViewData["Title"] = "Fundo";
+    Layout = "_LayoutManager";
+}
+<p>Fundos Registados <are></are> </p>
+<table style="width: 100%" class="Tabela">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Montante</th>
+        <th>Taxa de Juro</th>
+        <th>IdAtivo</th>
+        <th>Data inicio</th>
+        <th>Duração</th>
+        <th>Taxa Imposto</th>
+        <th>Id cliente</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var fun in @Model)
+    {
+        <tr>
+            <td>@fun.Nome</td>
+            <td>@fun.Montante</td>
+            <td>@fun.Taxajuro</td>
+            <td>@fun.Idativo</td>
+            <td>@fun.Datainicio</td>
+            <td>@fun.Durancao</td>
+            <td>@fun.Taxaimposto</td>
+            <td>@fun.Idcliente</td>
+        </tr>
+    }
+    </tbody>
+</table>

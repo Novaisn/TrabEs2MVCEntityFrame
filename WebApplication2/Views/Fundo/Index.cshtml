@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication2.Entities.Fundo>
+@{ViewData["Title"] = "Fundo";
+    Layout = "_Layout";
+}
+<p>Fundos Registados <are></are> </p>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" role="button"  asp-controller="Fundo" asp-action="criar"> Criar Fundo</a>
+</div>
+<p></p>
+<table style="width: 100%" id="Tabela">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Montante</th>
+        <th>Taxa de Juro</th>
+        <th>IdAtivo</th>
+        <th></th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var fun in @Model)
+    {
+        <tr>
+            <td>@fun.Nome</td>
+            <td>@fun.Montante</td>
+            <td>@fun.Taxajuro</td>
+            <td>@fun.Idativo</td>
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@fun.Idfundo">Editar</a> |
+                
+                <a asp-action="Delete" asp-route-id="@fun.Idfundo">Delete</a>
+            </td>
+
+
+
+        </tr>
+    }
+    </tbody>
+</table>

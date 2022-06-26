@@ -1,0 +1,187 @@
+﻿@model WebApplication2.Models.RelatorioImpostoModel
+
+@{
+    ViewData["Title"] = "Imposto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+
+</p>
+<div class="text-center">
+    <h3>Relatório De imposto Pago</h3>
+</div>
+<br/>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+
+
+
+<table class="table">
+
+
+
+    <thead>
+    <tr>
+        <th>
+            <h4>Data Inicio</h4>
+        </th>
+        <th>
+            <h4>Nome</h4>
+        </th>
+        <th>
+            <h4>Valor Renda</h4>
+        </th>
+        <th>
+            <h4>Valor Condominio</h4>
+        </th>
+        <th>
+            <h4>Valor estimado de Custos</h4>
+        </th>
+        <th>
+            <h4>Lucro</h4>
+        </th>
+        <th>
+            <h4>Lucro Com imposto</h4>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    @foreach (var x in Model.relatorioImoModel)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(item=>x.Datainicio)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Valorrenda)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Valorcondo)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Valoresti)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Lucro)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.LucroImposto)
+            </td>              
+        </tr>
+
+    }
+</table>
+<table class="table">
+
+
+
+    <thead>
+    <tr>
+        <th>
+            <h4>Data Inicio</h4>
+        </th>
+        <th>
+            <h4>Nome</h4>
+        </th>
+        <th>
+            <h4>Lucro</h4>
+        </th>
+        <th>
+            <h4>Lucro Com imposto</h4>
+        </th>
+
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    @foreach (var x in Model.relatorioFunModel)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(item=>x.Datainicio)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Lucro)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.LucroImposto)
+            </td>
+        </tr>
+
+    }
+</table>
+<table class="table">
+
+
+
+    <thead>
+    <tr>
+        <th>
+            <h4>Data Inicio</h4>
+        </th>
+        <th>
+            <h4>Banco</h4>
+        </th>
+        <th>
+            <h4>Valor</h4>
+        </th>
+        <th>
+            <h4>Lucro</h4>
+        </th>
+        <th>
+            <h4>Lucro</h4>
+        </th>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    @foreach (var x in Model.relatorioDepModel)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(item=>x.Datainicio)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Banco)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Lucro)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.LucroImposto)
+            </td>
+        </tr>
+
+    }
+</table>
+
+<dt> Valor de imposto pago:@Model.Imposto </dt>
+

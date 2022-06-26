@@ -1,0 +1,21 @@
+﻿@model List<ImovelModel>
+@{ViewData["Title"] = "MealsList";
+}
+<p>Welcome to the page where all meals <are></are> listed</p>
+<table style="width: 100%">
+    <tr>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>User</th>
+        <th>Time</th>
+    </tr>
+    @foreach (var meal in @Model)
+    {
+        <tr>
+            <td>@meal.Name</td>
+            <td>@meal.Calories</td>
+            <td>@meal.UserName</td>
+            <td>@meal.Time</td>
+        </tr>
+    } 
+</table>

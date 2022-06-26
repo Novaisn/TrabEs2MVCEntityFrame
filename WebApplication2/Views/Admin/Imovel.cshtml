@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication2.Models.AtivoImovelModel>
+@{ViewData["Title"] = "Imovel";
+    Layout = "_LayoutAdmin";
+}
+<p>Imoveis Registados <are></are> </p>
+<table style="width: 100%" id="Tabela">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>ValorRenda</th>
+
+        <th>ValorCondominio</th>
+        <th>Valor estimando</th>
+        <th>Rua</th>
+        <th>Nporta</th>
+        <th>Data Inicio</th>
+        <th>Duração</th>
+        <th>Id Cliente</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var imo in @Model)
+    {
+        <tr>
+            <td>@imo.Nome</td>
+            <td>@imo.valorRenda</td>
+
+            <td>@imo.valorCondo</td>
+            <td>@imo.valoresti</td>
+            <td>@imo.rua</td>
+            <td>@imo.nporta</td>
+            <td>@imo.Datainicio</td>
+            <td>@imo.Durancao</td>
+            <th>@imo.Idcliente</th>
+
+
+        </tr>
+
+    }
+    </tbody>
+</table>

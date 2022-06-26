@@ -1,0 +1,71 @@
+﻿@model WebApplication2.Entities.Imovel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Novo</h2>
+<h4>Imovel</h4>
+<hr />
+<div class="row">
+<div class="col-md-4">
+    <form asp-action="createatimo" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+        <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome</label>
+                <input asp-for="Nome" class="form-control"/>
+                <span asp-validation-for="Nome"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valorrenda" class="control-label">Valor Renda</label>
+                <input asp-for="Valorrenda" class="form-control"/>
+                <span asp-validation-for="Valorrenda"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valorcondo" class="control-label">Valor Condominio</label>
+                <input asp-for="Valorcondo" class="form-control"/>
+                <span asp-validation-for="Valorcondo"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valoresti" class="control-label">Valor Estimado</label>
+                <input asp-for="Valoresti" class="form-control"/>
+                 <span asp-validation-for="Valoresti"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rua">Rua</label>
+                <input asp-for="Rua" class="form-control"/>
+                <span asp-validation-for="Rua"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nporta">Nº Porta</label>
+                <input asp-for="Nporta" class="form-control"/>
+                 <span asp-validation-for="Nporta"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codpostal">Codigo Postal</label>
+                <input asp-for="Codpostal" class="form-control"/>
+                <span asp-validation-for="Codpostal"></span>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label"></label>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Criar Imovel" class="btn btn-primary"/>
+            </div>
+        
+  </form>
+    </div>
+    <div>
+        <a asp-action="Index">Voltar a lista</a>
+    </div>
+
+  
+</div>

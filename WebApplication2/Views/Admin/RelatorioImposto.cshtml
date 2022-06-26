@@ -1,0 +1,75 @@
+﻿@model WebApplication2.Models.RelatorioBancoModel
+
+@{
+    ViewData["Title"] = "Relatorio";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+
+</p>
+<div class="text-center">
+    <h3>Relatório Entre datas fundos</h3>
+</div>
+<br/>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+
+
+
+<table class="table">
+
+
+
+    <thead>
+    <tr>
+        
+        <th>
+            <h4>Banco</h4>
+        </th>
+        <th>
+            <h4>Valor</h4>
+        </th>
+        <th>
+            <h4>Taxa de Juro</h4>
+        </th>
+        
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    @foreach (var x in Model.depositos)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(item=>x.Banco)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Taxajuro)
+            </td>
+           
+        </tr>
+
+    }
+</table>
+
+<dt> Valor Total depositado:@Model.TotalDep </dt>
+
+<dt> Valor pago em juros:@Model.Totaljuro</dt>
+<p></p>
+<a asp-action="Index">Voltar ao Menu</a>

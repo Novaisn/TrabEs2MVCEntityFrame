@@ -1,0 +1,44 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication2.Entities.Imovel>
+@{ViewData["Title"] = "Imovel";
+    Layout = "_Layout";
+}
+<p>Imoveis Registados <are></are> </p>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" role="button"  asp-controller="Imovel" asp-action="CreateImo"> Criar utilizador</a>
+</div>
+<p></p>
+<table style="width: 100%" id="Tabela">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>ValorRenda</th>
+        <th>ValorCondominio</th>
+        <th>Valor estimando</th>
+        <th>Rua</th>
+        <th>Nporta</th>
+        <th></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var imo in @Model)
+    {
+        <tr>
+            <td>@imo.Nome</td>
+            <td>@imo.Valorrenda</td>
+
+            <td>@imo.Valorcondo</td>
+            <td>@imo.Valoresti</td>
+            <td>@imo.Rua</td>
+            <td>@imo.Nporta</td>
+
+            <td>
+                <a asp-action="Editimo" asp-route-id="@imo.Idimovel">Editar</a> |
+                <a asp-action="Deleteimo" asp-route-id="@imo.Idimovel">Eliminar</a> |
+            </td>
+        </tr>
+
+    }
+    </tbody>
+</table>

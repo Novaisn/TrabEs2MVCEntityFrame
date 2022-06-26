@@ -1,0 +1,83 @@
+﻿@model WebApplication2.Models.RelatoriolucroListDepModel
+
+@{
+    ViewData["Title"] = "Listagem de tarefas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+
+</p>
+<div class="text-center">
+    <h3>Relatório Entre datas fundos</h3>
+</div>
+<br/>
+
+<p>
+
+</p>
+
+<p>
+
+</p>
+
+
+
+
+<table class="table">
+
+
+
+    <thead>
+    <tr>
+        <th>
+            <h4>Data Inicio</h4>
+        </th>
+        <th>
+            <h4>Banco</h4>
+        </th>
+        <th>
+            <h4>Valor</h4>
+        </th>
+        <th>
+            <h4>Lucro</h4>
+        </th>
+        <th>
+            <h4>Lucro</h4>
+        </th>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    @foreach (var x in Model.relatoriolucroDepModel)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(item=>x.Datainicio)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Banco)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.Lucro)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>x.LucroImposto)
+            </td>
+        </tr>
+
+    }
+</table>
+
+<dt> Valor do lucro sem impostos:@Model.Lucro </dt>
+
+<dt> Valor do lucro com impostos:@Model.LucroImposto</dt>
+<p></p>
+<a asp-action="Index">Voltar ao Menu</a>
